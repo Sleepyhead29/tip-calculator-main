@@ -1,0 +1,21 @@
+$backgroundColor-body: hsl(185, 41%, 97%);
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: $backgroundColor-body;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+}
+
+#main-container{
+    width: 100vw;
+    height: auto;
+    background-color: white;
+    border: 1px solid black;
+}

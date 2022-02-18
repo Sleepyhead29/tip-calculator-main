@@ -7,6 +7,7 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
 
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -21,12 +22,14 @@
       color: hsl(228, 45%, 44%);
     }
   </style>
+
+
 </head>
 
 <body>
-   <!-- HTML Layout-->
+  <!-- HTML Layout-->
 
-<!-- 
+  <!-- 
 
 2 main containers: One for Logo, the other for the content
 
@@ -39,40 +42,17 @@ Inside the MAIN DIV there will by 4 divs(1 for each type of conent)
 
 -->
 
-<div id="logo"></div>
+  <div id="logo">
+    <img src="images/logo.svg" alt="">
+  </div>
 
-  <main>
+  <div id="main-container">
     <div id="bill-container"></div>
     <div id="tip-container"></div>
     <div id="peopleAmount-container"></div>
     <div id="final-container"></div>
-  </main>
+  </div>
 
-
-
-
-
-
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
