@@ -1,21 +1,60 @@
-$backgroundColor-body: hsl(185, 41%, 97%);
+$backgroundColor-body: hsl(185, 41%, 84%);
+$backgroundColor-input: hsl(185, 41%, 97%);
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
+
 body {
     background-color: $backgroundColor-body;
 }
 
-#logo{
+#logo {
     display: flex;
     justify-content: center;
+    height: 15vh;
+    align-items: center;
+
+    img {
+        width: 87px;
+        height: 54px;
+    }
 }
 
-#main-container{
+#main-container {
     width: 100vw;
-    height: auto;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+#bill-container {
+    width: 80%;
+    padding: 5%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+
+    input {
+        padding: 5px;
+        height: 30px;
+        background-color: $backgroundColor-input;
+        border: none;
+        text-align: right;
+        color: hsl(183, 100%, 15%);
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+#tip-container {
+    width: 80%;
+    display: flex;
     border: 1px solid black;
 }
