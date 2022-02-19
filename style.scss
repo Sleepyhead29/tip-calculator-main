@@ -7,8 +7,13 @@ $backgroundColor-money: hsl(183, 100%, 15%);
     margin: 0;
 }
 
-body {
+body input {
     background-color: $backgroundColor-body;
+    font-family: 'Space Mono';
+}
+
+h4 {
+    color: hsl(184, 14%, 43%);
 }
 
 #logo {
@@ -88,12 +93,12 @@ body {
     flex-direction: column;
     justify-content: flex-start;
 
-    h4{
+    h4 {
         margin: 2px;
         margin-bottom: 10px;
     }
 
-    .nbofPeopleInput{
+    .nbofPeopleInput {
         height: 30px;
         padding: 5px;
         background-color: $backgroundColor-input;
