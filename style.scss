@@ -1,5 +1,6 @@
 $backgroundColor-body: hsl(185, 41%, 84%);
 $backgroundColor-input: hsl(185, 41%, 97%);
+$backgroundColor-money: hsl(183, 100%, 15%);
 
 * {
     padding: 0;
@@ -56,5 +57,25 @@ body {
 #tip-container {
     width: 80%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     border: 1px solid black;
+
+    h4 {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .tip-button {
+        height: 40px;
+        font-size: 24px;
+        text-align: center;
+        flex: 0 0 5em;
+        margin: 4px;
+        border-radius: 3px;
+        border: none;
+        color: white;
+
+        background-color: $backgroundColor-money;
+    }
 }

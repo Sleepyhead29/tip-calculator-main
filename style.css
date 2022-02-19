@@ -51,7 +51,24 @@ body {
 #tip-container {
   width: 80%;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   border: 1px solid black;
+}
+#tip-container h4 {
+  width: 100%;
+  margin: 10px;
+}
+#tip-container .tip-button {
+  height: 40px;
+  font-size: 24px;
+  text-align: center;
+  flex: 0 0 5em;
+  margin: 4px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  background-color: #00494d;
 }
 
 /*# sourceMappingURL=style.css.map */
