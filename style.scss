@@ -82,6 +82,12 @@ h4,h5 {
         color: white;
 
         background-color: $backgroundColor-money;
+
+        
+    }
+    input:last-of-type{
+        background-color: $backgroundColor-input;
+        color: $backgroundColor-money;
     }
 }
 
