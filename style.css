@@ -49,7 +49,7 @@ body {
 }
 
 #tip-container {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -69,6 +69,29 @@ body {
   border: none;
   color: white;
   background-color: #00494d;
+}
+
+#peopleAmount-container {
+  width: 80%;
+  border: 1px solid black;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#peopleAmount-container h4 {
+  margin: 2px;
+  margin-bottom: 10px;
+}
+#peopleAmount-container .nbofPeopleInput {
+  height: 30px;
+  padding: 5px;
+  background-color: #f4fafa;
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00494d;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */
