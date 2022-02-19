@@ -3,20 +3,22 @@
   margin: 0;
 }
 
-body input {
+body,
+input {
   background-color: #c5e4e7;
   font-family: "Space Mono";
 }
 
-h4 {
+h4, h5 {
   color: #5e7b7d;
 }
 
 #logo {
   display: flex;
   justify-content: center;
-  height: 15vh;
+  height: 10vh;
   align-items: center;
+  margin: 10px;
 }
 #logo img {
   width: 87px;
@@ -25,13 +27,12 @@ h4 {
 
 #main-container {
   width: 100vw;
-  height: 85vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
-  border: 1px solid black;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
 }
 
 #bill-container {
@@ -40,7 +41,6 @@ h4 {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
 }
 #bill-container input {
   padding: 5px;
@@ -58,7 +58,6 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid black;
 }
 #tip-container h4 {
   width: 100%;
@@ -78,8 +77,7 @@ h4 {
 
 #peopleAmount-container {
   width: 80%;
-  border: 1px solid black;
-  padding: 5%;
+  padding: 7%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -97,6 +95,52 @@ h4 {
   font-weight: bold;
   color: #00494d;
   border: none;
+}
+
+#final-container {
+  background-color: #00494d;
+  width: 80%;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Space Mono";
+  text-align: center;
+  border-radius: 10px;
+}
+#final-container #tip,
+#final-container #total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+}
+#final-container #tip h4,
+#final-container #total h4 {
+  color: white;
+}
+#final-container #tip #tipPerson, #final-container #tip #totalPerson,
+#final-container #total #tipPerson,
+#final-container #total #totalPerson {
+  text-align: start;
+  margin: 10px;
+}
+#final-container #tip h3,
+#final-container #total h3 {
+  color: #26c0ab;
+  font-size: 24px;
+  margin: 10px;
+}
+#final-container #resetBtn {
+  background-color: #26c0ab;
+  margin: 20px;
+  height: 2em;
+  font-size: 18px;
+  color: #00494d;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */
