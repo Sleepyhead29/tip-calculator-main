@@ -9,7 +9,8 @@ input {
   font-family: "Space Mono";
 }
 
-h4, h5 {
+h4,
+h5 {
   color: #5e7b7d;
 }
 
@@ -35,8 +36,14 @@ h4, h5 {
   border-radius: 20px 20px 0 0;
 }
 
+#main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #bill-container {
-  width: 80%;
+  width: 75%;
   padding: 5%;
   margin: 0 auto;
   display: flex;
@@ -54,10 +61,11 @@ h4, h5 {
 }
 
 #tip-container {
-  width: 90%;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  column-gap: 1px;
+  row-gap: 1px;
 }
 #tip-container h4 {
   width: 100%;
@@ -67,20 +75,22 @@ h4, h5 {
   height: 40px;
   font-size: 24px;
   text-align: center;
-  flex: 0 0 5em;
+  flex: 0 0 140px;
   margin: 4px;
-  border-radius: 3px;
+  border-radius: 5px;
   border: none;
   color: white;
   background-color: #00494d;
 }
 #tip-container input:last-of-type {
   background-color: #f4fafa;
-  color: #00494d;
+  color: #5e7a7d;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 #peopleAmount-container {
-  width: 80%;
+  width: 75%;
   padding: 7%;
   display: flex;
   flex-direction: column;
@@ -123,7 +133,8 @@ h4, h5 {
 #final-container #total h4 {
   color: white;
 }
-#final-container #tip #tipPerson, #final-container #tip #totalPerson,
+#final-container #tip #tipPerson,
+#final-container #tip #totalPerson,
 #final-container #total #tipPerson,
 #final-container #total #totalPerson {
   text-align: start;
@@ -132,7 +143,7 @@ h4, h5 {
 #final-container #tip h3,
 #final-container #total h3 {
   color: #26c0ab;
-  font-size: 24px;
+  font-size: 36px;
   margin: 10px;
 }
 #final-container #resetBtn {
@@ -145,6 +156,47 @@ h4, h5 {
   border: none;
   text-align: center;
   font-weight: bold;
+}
+
+@media screen and (min-width: 1440px) {
+  #main-container {
+    width: 60vw;
+    height: 50vh;
+    margin: 0 auto;
+    flex-direction: row;
+    border-radius: 25px;
+  }
+
+  #main-content {
+    width: 50%;
+    height: 80%;
+    justify-content: center;
+  }
+
+  #tip-container .tip-button {
+    flex: 0 0 4em;
+  }
+
+  #final-container {
+    margin: auto;
+    margin-right: 30px;
+    width: 50%;
+    height: 85%;
+    justify-content: space-between;
+  }
+  #final-container #amountPerson {
+    margin-top: 20px;
+  }
+  #final-container #tip, #final-container #total {
+    align-items: center;
+  }
+  #final-container #resetBtn {
+    margin: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 40px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

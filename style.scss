@@ -13,7 +13,8 @@ input {
     font-family: 'Space Mono';
 }
 
-h4,h5 {
+h4,
+h5 {
     color: hsl(184, 14%, 43%);
 }
 
@@ -41,8 +42,14 @@ h4,h5 {
     border-radius: 20px 20px 0 0;
 }
 
+#main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #bill-container {
-    width: 80%;
+    width: 75%;
     padding: 5%;
     margin: 0 auto;
     display: flex;
@@ -61,10 +68,11 @@ h4,h5 {
 }
 
 #tip-container {
-    width: 90%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    column-gap: 1px;
+    row-gap: 1px;
 
     h4 {
         width: 100%;
@@ -75,24 +83,27 @@ h4,h5 {
         height: 40px;
         font-size: 24px;
         text-align: center;
-        flex: 0 0 5em;
+        flex: 0 0 140px;
         margin: 4px;
-        border-radius: 3px;
+        border-radius: 5px;
         border: none;
         color: white;
 
         background-color: $backgroundColor-money;
 
-        
+
     }
-    input:last-of-type{
+
+    input:last-of-type {
         background-color: $backgroundColor-input;
-        color: $backgroundColor-money;
+        color: hsl(186, 14%, 43%);
+        font-weight: bold;
+        font-size: 24px;
     }
 }
 
 #peopleAmount-container {
-    width: 80%;
+    width: 75%;
     padding: 7%;
     display: flex;
     flex-direction: column;
@@ -138,16 +149,17 @@ h4,h5 {
             color: white;
         }
 
-        #tipPerson,#totalPerson {
+        #tipPerson,
+        #totalPerson {
             text-align: start;
             margin: 10px;
 
         }
-        
+
 
         h3 {
             color: hsl(172, 67%, 45%);
-            font-size: 24px;
+            font-size: 36px;
             margin: 10px;
         }
 
@@ -164,4 +176,50 @@ h4,h5 {
         text-align: center;
         font-weight: bold;
     }
+}
+
+@media screen and (min-width: 1440px) {
+    #main-container {
+        width: 60vw;
+        height: 50vh;
+        margin: 0 auto;
+        flex-direction: row;
+        border-radius: 25px;
+    }
+
+    #main-content {
+        width: 50%;
+        height: 80%;
+        justify-content: center;
+    }
+
+    #tip-container {
+        .tip-button {
+            flex: 0 0 4em;
+        }
+    }
+
+    #final-container {
+        margin: auto;
+        margin-right: 30px;
+        width: 50%;
+        height: 85%;
+        justify-content: space-between;
+
+        #amountPerson {
+            margin-top: 20px;
+            
+        }
+        #tip, #total{
+            align-items: center;
+        }
+        #resetBtn {
+            margin: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            height: 40px;
+        }
+    }
+
 }
