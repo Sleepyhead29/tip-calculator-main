@@ -82,6 +82,11 @@ h5 {
   color: white;
   background-color: #00494d;
 }
+#tip-container .tip-button:hover {
+  color: #00494d;
+  background-color: #c5e4e7;
+  cursor: pointer;
+}
 #tip-container input:last-of-type {
   background-color: #f4fafa;
   color: #5e7a7d;
@@ -157,6 +162,10 @@ h5 {
   text-align: center;
   font-weight: bold;
 }
+#final-container #resetBtn:hover {
+  background-color: #c5e4e7;
+  cursor: pointer;
+}
 
 @media screen and (min-width: 1440px) {
   #main-container {
@@ -187,7 +196,8 @@ h5 {
   #final-container #amountPerson {
     margin-top: 20px;
   }
-  #final-container #tip, #final-container #total {
+  #final-container #tip,
+#final-container #total {
     align-items: center;
   }
   #final-container #resetBtn {

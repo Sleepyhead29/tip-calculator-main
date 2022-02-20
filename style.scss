@@ -94,6 +94,12 @@ h5 {
 
     }
 
+    .tip-button:hover {
+        color: $backgroundColor-money;
+        background-color: $backgroundColor-body;
+        cursor: pointer;
+    }
+
     input:last-of-type {
         background-color: $backgroundColor-input;
         color: hsl(186, 14%, 43%);
@@ -175,6 +181,13 @@ h5 {
         border: none;
         text-align: center;
         font-weight: bold;
+
+
+    }
+
+    #resetBtn:hover {
+        background-color: $backgroundColor-body;
+        cursor: pointer;
     }
 }
 
@@ -208,11 +221,14 @@ h5 {
 
         #amountPerson {
             margin-top: 20px;
-            
+
         }
-        #tip, #total{
+
+        #tip,
+        #total {
             align-items: center;
         }
+
         #resetBtn {
             margin: 40px;
             margin-left: auto;
