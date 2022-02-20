@@ -11,15 +11,6 @@ billAmountInput.addEventListener("focusout", verifyInput);
 nbPeopleInput.addEventListener("click", changeColor);
 nbPeopleInput.addEventListener("focusout", verifyInput);
 
-Array.from(tipButtons).forEach(function (tipButton) {
-    tipButton.addEventListener("click", changeBtnColor);
-
-    function changeBtnColor() {
-        this.style.backgroundColor = "hsl(172, 67%, 45%)";
-        this.style.color = "hsl(183, 100%, 15%)";
-    }
-})
-
 //<------- Functions ------->
 function changeColor() {
     if (this == billAmountInput || this == nbPeopleInput) {
@@ -35,3 +26,4 @@ function verifyInput() {
         this.style.border = "none";
     }
 }
+
