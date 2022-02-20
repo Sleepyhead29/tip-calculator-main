@@ -58,6 +58,7 @@ h5 {
   color: #00494d;
   font-size: 24px;
   font-weight: bold;
+  border-radius: 5px;
 }
 
 #tip-container {
@@ -114,6 +115,7 @@ h5 {
   font-weight: bold;
   color: #00494d;
   border: none;
+  border-radius: 5px;
 }
 
 #final-container {
