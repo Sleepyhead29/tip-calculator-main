@@ -1,7 +1,8 @@
 //<------- Variables ------->
 let billAmountInput = document.getElementById("billAmountInput");
 let nbPeopleInput = document.getElementById("nbofPeopleInput");
-let tipButtons = document.getElementsByClassName("tip-button");
+let tipButtons = document.querySelectorAll(".tip-button");
+
 
 
 
@@ -27,3 +28,10 @@ function verifyInput() {
     }
 }
 
+//Creating active button
+tipButtons.forEach(tipButton => {
+    tipButton.addEventListener("click", function () {
+        tipButtons.forEach(tipBtn => tipBtn.classList.remove("active"));
+        this.classList.add("active");
+    });
+});

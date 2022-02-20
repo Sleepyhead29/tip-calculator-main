@@ -83,6 +83,10 @@ h5 {
   color: white;
   background-color: #00494d;
 }
+#tip-container .active {
+  background-color: #26c0ab;
+  color: #c5e4e7;
+}
 #tip-container .tip-button:hover {
   color: #00494d;
   background-color: #c5e4e7;

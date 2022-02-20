@@ -94,6 +94,10 @@ h5 {
 
 
     }
+    .active{
+        background-color: hsl(172, 67%, 45%);
+        color: $backgroundColor-body;
+    }
 
     .tip-button:hover {
         color: $backgroundColor-money;
@@ -107,6 +111,7 @@ h5 {
         font-weight: bold;
         font-size: 24px;
     }
+    
 }
 
 #peopleAmount-container {
