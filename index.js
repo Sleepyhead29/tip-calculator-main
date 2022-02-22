@@ -18,7 +18,7 @@ billAmountInput.addEventListener("focusout", verifyInput);
 nbPeopleInput.addEventListener("click", changeColor);
 nbPeopleInput.addEventListener("focusout", verifyInput);
 customButton.addEventListener("click", customButtonEffects);
-customButton.addEventListener("focusout", verifyInput);
+//customButton.addEventListener("focusout", verifyInput);
 
 billAmountInput.addEventListener("focusout", calculateValue);
 nbPeopleInput.addEventListener("focusout", calculateValue);
@@ -117,9 +117,12 @@ function calculateValue() {
         let totalAmount = (billAmount / peopleAmount) + totalTipAmount;
 
 
-        if (isFinite(totalTipAmount && isFinite(totalAmount))) {
-            tipPerPerson.textContent = totalTipAmount;
-            totalPerPerson.textContent = totalAmount;
+        if (isFinite(totalTipAmount) && isFinite(totalAmount)) {
+            tipPerPerson.textContent = totalTipAmount.toFixed(2);
+            totalPerPerson.textContent = totalAmount.toFixed(2);
+        }else{
+            tipPerPerson.textContent = "$0.00";
+            totalPerPerson.textContent = "$0.00";
         }
         
         
