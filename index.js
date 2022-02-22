@@ -19,11 +19,13 @@ nbPeopleInput.addEventListener("click", changeColor);
 nbPeopleInput.addEventListener("focusout", verifyInput);
 customButton.addEventListener("click", customButtonEffects);
 resetButton.addEventListener("click", clearAll);
-//customButton.addEventListener("focusout", verifyInput);
+customButton.addEventListener("input",() =>{
+    tipAmount = customButton.value;
+});
 
-billAmountInput.addEventListener("focusout", calculateValue);
-nbPeopleInput.addEventListener("focusout", calculateValue);
-customButton.addEventListener("focusout", calculateValue);
+billAmountInput.addEventListener("input", calculateValue);
+nbPeopleInput.addEventListener("input", calculateValue);
+customButton.addEventListener("input", calculateValue);
 //<------- Functions ------->
 function changeColor() {
     if (this == billAmountInput || this == nbPeopleInput) {
@@ -86,6 +88,7 @@ function customButtonEffects() {
         customButton.setAttribute("type", "text");
         customButton.value = "";
         customButton.style.backgroundColor = "hsl(185, 41%, 97%)";
+        
 
 
         /* function createCustomInput(){
@@ -108,6 +111,7 @@ function clearAll() {
     nbPeopleInput.value = "";
     tipPerPerson.textContent = "$0.00";
     totalPerPerson.textContent = "$0.00";
+    resetButton.style.backgroundColor = "hsl(172, 67%, 45%)";
 
     tipButtons.forEach(tipButton => {
         tipButton.classList.remove("active");
