@@ -4,6 +4,11 @@ let nbPeopleInput = document.getElementById("nbofPeopleInput");
 let tipButtons = document.querySelectorAll(".tip-button");
 let customButton = document.querySelector(".custombtn");
 
+let tipPerPerson = document.getElementById("tipPerPerson");
+let totalPerPerson = document.getElementById("totalPerPerson");
+let tipAmount;
+
+
 
 
 
@@ -14,6 +19,10 @@ nbPeopleInput.addEventListener("click", changeColor);
 nbPeopleInput.addEventListener("focusout", verifyInput);
 customButton.addEventListener("click", customButtonEffects);
 customButton.addEventListener("focusout", verifyInput);
+
+billAmountInput.addEventListener("focusout", calculateValue);
+nbPeopleInput.addEventListener("focusout", calculateValue);
+customButton.addEventListener("focusout", calculateValue);
 //<------- Functions ------->
 function changeColor() {
     if (this == billAmountInput || this == nbPeopleInput) {
@@ -45,14 +54,15 @@ function verifyInput() {
             textContainer.append(warning);
         }
 
-        
 
 
 
-    }else {
+
+    } else {
+        this.style.border = "none";
         warning = document.getElementById("warningMessage");
         warning.remove();
-        this.style.border = "none";
+
     }
 }
 
@@ -61,6 +71,9 @@ tipButtons.forEach(tipButton => {
     tipButton.addEventListener("click", function () {
         tipButtons.forEach(tipBtn => tipBtn.classList.remove("active"));
         this.classList.add("active");
+        tipAmount = this.value;
+        calculateValue();
+        return this.value;
     });
 });
 
@@ -81,7 +94,42 @@ function customButtonEffects() {
 
     }
 
-
     this.style.outlineColor = "hsl(172, 67%, 45%)";
     replaceButton();
+}
+
+//Functions to calculate Total bills 
+
+//console.log(tipValue);
+
+function calculateValue() {
+    let billAmount = billAmountInput.value;
+    billAmount = Number(billAmount);
+    let peopleAmount = nbPeopleInput.value;
+    peopleAmount = Number(peopleAmount);
+    tipAmount = parseFloat(tipAmount);
+    /*console.log(billAmount);
+    console.log(peopleAmount);
+    console.log(customButton.value);*/
+    if (isFinite(tipAmount)) {
+
+        let totalTipAmount = ((tipAmount * billAmount) / peopleAmount) / 100;
+        let totalAmount = (billAmount / peopleAmount) + totalTipAmount;
+
+
+        if (isFinite(totalTipAmount && isFinite(totalAmount))) {
+            tipPerPerson.textContent = totalTipAmount;
+            totalPerPerson.textContent = totalAmount;
+        }
+        
+        
+        
+
+    }
+
+
+
+
+
+
 }
