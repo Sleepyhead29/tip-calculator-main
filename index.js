@@ -13,7 +13,7 @@ billAmountInput.addEventListener("focusout", verifyInput);
 nbPeopleInput.addEventListener("click", changeColor);
 nbPeopleInput.addEventListener("focusout", verifyInput);
 customButton.addEventListener("click", customButtonEffects);
-customButton.addEventListener("focusout",verifyInput);
+customButton.addEventListener("focusout", verifyInput);
 //<------- Functions ------->
 function changeColor() {
     if (this == billAmountInput || this == nbPeopleInput) {
@@ -25,7 +25,33 @@ function changeColor() {
 function verifyInput() {
     if (this.value == "0" || this.value == "") {
         this.style.border = "1px solid red";
-    } else {
+
+        //Creates Warning Message
+
+
+
+        let warning = document.createElement('h4');
+        let warningMessage = document.createTextNode("Can't be Zero");
+        warning.appendChild(warningMessage);
+        warning.style.color = "red";
+        warning.setAttribute("id", "warningMessage");
+
+        //Checks previous sibling container
+
+        let textContainer = this.previousElementSibling;
+
+        //Appends the warning message to previous sibling
+        if (this.previousSibling) {
+            textContainer.append(warning);
+        }
+
+        
+
+
+
+    }else {
+        warning = document.getElementById("warningMessage");
+        warning.remove();
         this.style.border = "none";
     }
 }
@@ -51,11 +77,11 @@ function customButtonEffects() {
         /* function createCustomInput(){
              let customInput = document.create
          }*/
-         
+
 
     }
 
-    
+
     this.style.outlineColor = "hsl(172, 67%, 45%)";
     replaceButton();
 }
