@@ -2,6 +2,7 @@
 let billAmountInput = document.getElementById("billAmountInput");
 let nbPeopleInput = document.getElementById("nbofPeopleInput");
 let tipButtons = document.querySelectorAll(".tip-button");
+let customButton = document.querySelector(".custombtn");
 
 
 
@@ -11,7 +12,8 @@ billAmountInput.addEventListener("click", changeColor);
 billAmountInput.addEventListener("focusout", verifyInput);
 nbPeopleInput.addEventListener("click", changeColor);
 nbPeopleInput.addEventListener("focusout", verifyInput);
-
+customButton.addEventListener("click", customButtonEffects);
+customButton.addEventListener("focusout",verifyInput);
 //<------- Functions ------->
 function changeColor() {
     if (this == billAmountInput || this == nbPeopleInput) {
@@ -35,3 +37,25 @@ tipButtons.forEach(tipButton => {
         this.classList.add("active");
     });
 });
+
+//Custom Button effects
+function customButtonEffects() {
+    function replaceButton() {
+
+        customButton.removeAttribute("type");
+        customButton.setAttribute("type", "text");
+        customButton.value = "";
+        customButton.style.backgroundColor = "hsl(185, 41%, 97%)";
+
+
+        /* function createCustomInput(){
+             let customInput = document.create
+         }*/
+         
+
+    }
+
+    
+    this.style.outlineColor = "hsl(172, 67%, 45%)";
+    replaceButton();
+}
