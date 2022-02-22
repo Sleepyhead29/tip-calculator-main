@@ -109,6 +109,11 @@ function clearAll() {
     tipPerPerson.textContent = "$0.00";
     totalPerPerson.textContent = "$0.00";
 
+    tipButtons.forEach(tipButton => {
+        tipButton.classList.remove("active");
+
+    })
+
 }
 
 function calculateValue() {
