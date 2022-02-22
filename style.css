@@ -60,6 +60,11 @@ h5 {
   font-weight: bold;
   border-radius: 5px;
 }
+#bill-container #billAmountInput {
+  background-image: url("images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
 
 #tip-container {
   width: 80%;
@@ -115,6 +120,9 @@ h5 {
   height: 30px;
   padding: 5px;
   background-color: #f4fafa;
+  background-image: url("images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
   text-align: right;
   font-size: 24px;
   font-weight: bold;
