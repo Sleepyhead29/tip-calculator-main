@@ -13,13 +13,13 @@ let tipAmount;
 
 
 //<------- Event Listeners ------->
-billAmountInput.addEventListener("click", changeColor);
+billAmountInput.addEventListener("input", changeColor);
 billAmountInput.addEventListener("focusout", verifyInput);
-nbPeopleInput.addEventListener("click", changeColor);
+nbPeopleInput.addEventListener("input", changeColor);
 nbPeopleInput.addEventListener("focusout", verifyInput);
 customButton.addEventListener("click", customButtonEffects);
 resetButton.addEventListener("click", clearAll);
-customButton.addEventListener("input",() =>{
+customButton.addEventListener("input", () => {
     tipAmount = customButton.value;
 });
 
@@ -33,39 +33,43 @@ function changeColor() {
     }
 
 }
+let executed = false;
 
 function verifyInput() {
-    if (this.value == "0" || this.value == "") {
+    if (this.value < 1 || this.value == "" || executed == false) {
         this.style.border = "1px solid red";
-
-        //Creates Warning Message
-
-
-
-        let warning = document.createElement('h4');
-        let warningMessage = document.createTextNode("Can't be Zero");
-        warning.appendChild(warningMessage);
-        warning.style.color = "red";
-        warning.setAttribute("id", "warningMessage");
-
-        //Checks previous sibling container
 
         let textContainer = this.previousElementSibling;
 
-        //Appends the warning message to previous sibling
-        if (this.previousSibling) {
-            textContainer.append(warning);
+        //Creates Warning Message
+        function printWarning() {
+            let warning = document.createElement('h4');
+            let warningMessage = document.createTextNode("Can't be Zero");
+            warning.appendChild(warningMessage);
+            warning.style.color = "red";
+            warning.setAttribute("id", "warningMessage");
+
+
+            //Checks previous sibling container
+
+            if (executed == false) {
+                textContainer.append(warning);
+                executed = true;
+            }
         }
+        printWarning();
+        //Appends the warning message to previous sibling
+        /*if (this.previousSibling) {
+            textContainer.append(warning)
+            
+        }*/
 
 
-
-
-
-    } else {
+    } else if (this.value > 0) {
         this.style.border = "none";
-        warning = document.getElementById("warningMessage");
+        let warning = document.getElementById("warningMessage");
         warning.remove();
-
+        executed = false;
     }
 }
 
@@ -88,7 +92,7 @@ function customButtonEffects() {
         customButton.setAttribute("type", "text");
         customButton.value = "";
         customButton.style.backgroundColor = "hsl(185, 41%, 97%)";
-        
+
 
 
         /* function createCustomInput(){
@@ -112,6 +116,8 @@ function clearAll() {
     tipPerPerson.textContent = "$0.00";
     totalPerPerson.textContent = "$0.00";
     resetButton.style.backgroundColor = "hsl(172, 67%, 45%)";
+    nbPeopleInput.style.border = "none";
+    billAmountInput.style.border = "none";
 
     tipButtons.forEach(tipButton => {
         tipButton.classList.remove("active");
