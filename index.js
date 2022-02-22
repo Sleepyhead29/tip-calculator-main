@@ -132,8 +132,18 @@ function calculateValue() {
 
 
         if (isFinite(totalTipAmount) && isFinite(totalAmount)) {
-            tipPerPerson.textContent = totalTipAmount.toFixed(2);
-            totalPerPerson.textContent = totalAmount.toFixed(2);
+            totalTipAmount = totalTipAmount.toFixed(2);
+            totalTipAmount = totalTipAmount.toString();
+            totalTipAmount = "$" + totalTipAmount;
+            tipPerPerson.textContent = totalTipAmount;
+
+            totalAmount = totalAmount.toFixed(2);
+            totalAmount = totalAmount.toString();
+            totalAmount = "$" + totalAmount;
+            totalPerPerson.textContent = totalAmount;
+
+            //tipPerPerson.textContent = totalTipAmount.toFixed(2);
+            //totalPerPerson.textContent = totalAmount.toFixed(2);
         } else {
             tipPerPerson.textContent = "$0.00";
             totalPerPerson.textContent = "$0.00";
@@ -143,10 +153,6 @@ function calculateValue() {
 
 
     }
-
-
-
-
 
 
 }
