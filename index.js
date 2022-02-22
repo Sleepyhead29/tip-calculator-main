@@ -3,7 +3,7 @@ let billAmountInput = document.getElementById("billAmountInput");
 let nbPeopleInput = document.getElementById("nbofPeopleInput");
 let tipButtons = document.querySelectorAll(".tip-button");
 let customButton = document.querySelector(".custombtn");
-
+let resetButton = document.getElementById("resetBtn");
 let tipPerPerson = document.getElementById("tipPerPerson");
 let totalPerPerson = document.getElementById("totalPerPerson");
 let tipAmount;
@@ -18,6 +18,7 @@ billAmountInput.addEventListener("focusout", verifyInput);
 nbPeopleInput.addEventListener("click", changeColor);
 nbPeopleInput.addEventListener("focusout", verifyInput);
 customButton.addEventListener("click", customButtonEffects);
+resetButton.addEventListener("click", clearAll);
 //customButton.addEventListener("focusout", verifyInput);
 
 billAmountInput.addEventListener("focusout", calculateValue);
@@ -102,6 +103,14 @@ function customButtonEffects() {
 
 //console.log(tipValue);
 
+function clearAll() {
+    billAmountInput.value = "";
+    nbPeopleInput.value = "";
+    tipPerPerson.textContent = "$0.00";
+    totalPerPerson.textContent = "$0.00";
+
+}
+
 function calculateValue() {
     let billAmount = billAmountInput.value;
     billAmount = Number(billAmount);
@@ -120,13 +129,13 @@ function calculateValue() {
         if (isFinite(totalTipAmount) && isFinite(totalAmount)) {
             tipPerPerson.textContent = totalTipAmount.toFixed(2);
             totalPerPerson.textContent = totalAmount.toFixed(2);
-        }else{
+        } else {
             tipPerPerson.textContent = "$0.00";
             totalPerPerson.textContent = "$0.00";
         }
-        
-        
-        
+
+
+
 
     }
 
