@@ -66,7 +66,7 @@ h5 {
   border-radius: 5px;
 }
 #bill-container #billAmountInput {
-  background-image: url("images/icon-dollar.svg");
+  background-image: url("icon-dollar.svg");
   background-repeat: no-repeat;
   background-position: 5% 50%;
 }
@@ -136,7 +136,7 @@ h5 {
   height: 30px;
   padding: 5px;
   background-color: #f4fafa;
-  background-image: url("images/icon-person.svg");
+  background-image: url("icon-person.svg");
   background-repeat: no-repeat;
   background-position: 5% 50%;
   text-align: right;
