@@ -6,6 +6,7 @@ let customButton = document.querySelector(".custombtn");
 let resetButton = document.getElementById("resetBtn");
 let tipPerPerson = document.getElementById("tipPerPerson");
 let totalPerPerson = document.getElementById("totalPerPerson");
+let warning = document.getElementById('red-warning');
 let tipAmount;
 
 
@@ -36,19 +37,14 @@ function changeColor() {
 let executed = false;
 
 function verifyInput() {
-    if (this.value < 1 || this.value == "" || executed == false) {
+    if (this.value < 1 || this.value == "" && executed == false) {
         this.style.border = "1px solid red";
 
         let textContainer = this.previousElementSibling;
 
         //Creates Warning Message
         function printWarning() {
-            let warning = document.createElement('h4');
-            let warningMessage = document.createTextNode("Can't be Zero");
-            warning.appendChild(warningMessage);
-            warning.style.color = "red";
-            warning.setAttribute("id", "warningMessage");
-
+            warning.style.display = "inline-block";
 
             //Checks previous sibling container
 
@@ -58,17 +54,11 @@ function verifyInput() {
             }
         }
         printWarning();
-        //Appends the warning message to previous sibling
-        /*if (this.previousSibling) {
-            textContainer.append(warning)
-            
-        }*/
 
 
     } else if (this.value > 0) {
         this.style.border = "none";
-        let warning = document.getElementById("warningMessage");
-        warning.remove();
+        warning.style.display = "none";
         executed = false;
     }
 }
